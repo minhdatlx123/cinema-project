@@ -15,9 +15,11 @@ html body {
     background-repeat: no-repeat;
     background-size: contain;    
     display:flex;
+    flex: 1;
     flex-direction: column;
     justify-content: flex-end;    
     position: relative;
+    overflow:hidden;
 }
 #reservation-btn {
     display: none;
@@ -34,11 +36,11 @@ html body {
     height: 100vh;
 }
 .details{
-    height: 65%;
+    height: 70%;
     background-image: linear-gradient(360deg, #0f0000 70%, rgba(0, 0, 0, 0.5), transparent);
     margin-top: auto;
     width:100%;
-    padding: 30px 20px;
+    padding: 80px 20px 30px 20px;
     color: white;
     text-align: center;
 }
