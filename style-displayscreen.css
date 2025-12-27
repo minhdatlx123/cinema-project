@@ -101,8 +101,8 @@ html body {
     display: block;  /* Hiển thị nút trên mobile */
     bottom: 0;
     margin-bottom: 50px;
-    left: 30px;
-    right: 30px;
+    left: 35px;
+    right: 35px;
     padding: 18px 20px;
     background: linear-gradient(260deg, #521212 0%, #A10600 100%,rgba(161, 6, 0, 1) 100%); 
     color:  white;
