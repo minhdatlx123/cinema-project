@@ -2,7 +2,9 @@
     box-sizing: border-box;
     margin: 0;
 }
-html body {
+html, body {
+    padding: 0;
+    margin: 0;
     width: 100%;
     overflow-x: hidden;
 
@@ -10,6 +12,7 @@ html body {
 #date-time-screen{
     background: #F34646;
     min-height: 100vh;
+        min-height: 100dvh;
     width:100%;
     background-image: url(assets/image\ 1.png);
     background-repeat: no-repeat;
@@ -28,12 +31,14 @@ html body {
     background-image: url(assets/Screen.png);
     background: #000000;
     min-height: 100vh;
+        min-height: 100dvh;
     width:65%;
 }
 .screen-container{
     display: flex;
     width: 100vw;
     min-height: 100vh;
+        min-height: 100dvh;
     background: #000;
 }
 .details{
