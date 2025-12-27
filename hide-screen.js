@@ -1,3 +1,10 @@
+// ALERT MESSAGE 
+window.addEventListener('load', () => {
+    alert("🚧This project is under final development. UI and logic will be improved\n❤️Thank you for visiting ❤️");
+});
+
+
+
 // SWITCH/HIDE SCREENS
 const reservationBtn = document.querySelector('#reservation-btn');
 const backScreenBtn = document.querySelector('#back-screen-btn');
