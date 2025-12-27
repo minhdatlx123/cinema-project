@@ -10,14 +10,15 @@ html body {
 #date-time-screen{
     background: #F34646;
     min-height: 100vh;
-    flex: 1;
+    width:100%;
     background-image: url(assets/image\ 1.png);
     background-repeat: no-repeat;
     background-size: contain;    
     display:flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: flex-end;   
-    position:relative;
+    justify-content: flex-end;    
+    position: relative;
     overflow:hidden;
 }
 #reservation-btn {
@@ -25,23 +26,25 @@ html body {
 }
 #seats-screen{
     background-image: url(assets/Screen.png);
-    background: #140202;
+    background: #000000;
     min-height: 100vh;
-    flex: 1;
+    width:65%;
 }
 .screen-container{
     display: flex;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    background: #000;
 }
 .details{
     height: 70%;
-    background-image: linear-gradient(360deg, #0f0000 70%, rgba(0, 0, 0, 0.5), transparent);
+    background-image: linear-gradient(360deg, #000000 70%, rgba(0, 0, 0, 0.5), transparent);
     margin-top: auto;
-    max-width: 100%;
-    padding-top: 400px;
+    width:100%;
+    padding-bottom: 150px;
     color: white;
     text-align: center;
+    align-content: flex-end;
 }
 .details h2 {  /* Title */
   font-size: 35px;
@@ -52,7 +55,7 @@ html body {
 }
 
 .details h3 {  /* Subtitle */
-  font-size: 30px;
+  font-size: 26px;
   font-weight:  400;
   margin: 0 0 20px 0;
   color:  #e0e0e0;  /* Hơi nhạt hơn một tí */
@@ -60,11 +63,12 @@ html body {
 }
 
 .details p {  /* Description */
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.6;
   margin: 0;
   color: #d0d0d0;
+  
 }
 
 .details a {  /* "read more" link */
@@ -85,8 +89,6 @@ html body {
     }
     #date-time-screen{
     width: 100%;
-    justify-content: center;
-    align-items: center;
     }
 #seats-screen{
     width:100%;
@@ -99,22 +101,33 @@ html body {
     display: block;  /* Hiển thị nút trên mobile */
     bottom: 0;
     margin-bottom: 50px;
-    left: 50px;
-    right: 50px;
+    left: 30px;
+    right: 30px;
     padding: 18px 20px;
-    background-color:  #780300;
+    background: linear-gradient(260deg, #521212 0%, #A10600 100%,rgba(161, 6, 0, 1) 100%); 
     color:  white;
-    border: none;
-    border-radius: 25px 25px 25px 25px ;
-    font-size: 18px;
-    font-weight: 600;
+    border: 2px solid #780300;
+    border-radius: 30px 30px 30px 30px ;
+    font-size: 17px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: none;
     position: absolute;
 }
+#reservation-btn:hover {
+  background: linear-gradient(90deg, #8B0000 0%, #8B0000 60%, rgba(139, 0, 0, 0.3) transparent);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(207, 99, 99, 0.6);
+}
+#reservation-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(224, 192, 48, 0.4);
+}
 .details {
-    padding: 40px 20px;
+    /* padding: 80px 20px 30px 20px; */
+    align-content: center;
+    padding-bottom: 400px;
 }
 .hide{
     display:none;
@@ -178,13 +191,4 @@ html body {
 .seat-row:nth-child(2)>.seat:nth-child(4) {
     margin-right: 50px;
     margin-bottom: 10px;
-}
-#reservation-btn:hover {
-  background: linear-gradient(135deg, #b71c1c 0%, #8b0000 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
-}
-#reservation-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(211, 47, 47, 0.4);
 }
