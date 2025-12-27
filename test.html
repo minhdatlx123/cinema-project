@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .carousel {
+            width: 50vw;
+            height: 200px;
+            position: relative;
+            background: lightblue;
+            margin: auto;
+            display: flex;
+        }
+        .left {
+            position: absolute;
+            top: 50%;
+            right: 100%;
+        }
+        .right {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+        }
+        .item-slider{
+            display:flex;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            align-items: flex-end;
+        }
+        .container {
+            display:flex;
+            position: absolute;
+            height: 80%;
+            transition: all 0.3s;
+            left: 0;
+            
+        }
+        .item {
+            position: relative;
+            height: 100%;
+            width: 10vw;
+            border: 1px solid black;
+            flex-shrink: 0;
+            bottom: 0px;
+        }
+        .selected {
+            bottom: 20px;
+        }
+        .next-to-selected {
+            bottom: 10px;
+        }
+    </style>
+    <div class="carousel">
+        <div class="left"> left </div>
+        <div class="item-slider">
+            <div class="container">
+                <div class="item" data-item-id="1">1</div>
+                <div class="item" data-item-id="2">2</div>
+                <div class="item" data-item-id="3">3</div>
+                <div class="item" data-item-id="4">4</div>
+                <div class="item" data-item-id="5">5</div>
+                <div class="item" data-item-id="6">6</div>
+                <div class="item" data-item-id="7">7</div>
+                <div class="item" data-item-id="8">8</div>
+                <div class="item" data-item-id="9">9</div>
+                <div class="item" data-item-id="10">10</div>
+            </div>
+        </div>
+        <div class="right">next</div>
+    </div>
+    <script>
+        
+        const leftButton = document.querySelector('.left');
+        const rightButton = document.querySelector('.right');
+        const container = document.querySelector('.container');
+        const carouselItem = document.querySelectorAll('.item');
+        
+        let currentIndex = 1;
+        const minIndex = 1;
+        const maxIndex = 10;
+        //currentIndex
+        let currentLeft = 0;
+        let itemWidth = 10; //
+        const selectedPosition = 3; //when selected item, the item will be at index 
+        moveSlider(1);
+
+        function moveSlider(itemIndex) {
+            const step = selectedPosition - itemIndex;
+            const newPosition = itemWidth * step + 'vw';
+            container.style.left = newPosition;
+
+            //clear all class
+            carouselItem.forEach(function (element){
+                element.classList.remove('selected');
+                element.classList.remove('next-to-selected')
+            })
+            //add to selected item
+            carouselItem[currentIndex - 1].classList.add('selected');
+            if(currentIndex !== minIndex){
+                carouselItem[currentIndex - 2].classList.add('next-to-selected');
+            }
+            if(currentIndex !== maxIndex){
+                carouselItem[currentIndex]. classList.add('next-to-selected')
+            }
+        }
+
+        carouselItem.forEach(element =>{
+            element.addEventListener('click', function(e){
+                const index = e.target.dataset.itemId;
+                currentIndex = Number(index);
+                moveSlider(currentIndex)
+            })
+        });
+
+        rightButton.addEventListener('click', function (e) {
+            if(currentIndex === maxIndex) {
+                return
+            }
+            currentIndex = currentIndex + 1;
+            moveSlider(currentIndex);
+        })
+
+
+        leftButton.addEventListener('click', function (e) {
+            if(currentIndex === minIndex){
+                return
+            }
+            currentIndex = currentIndex - 1;
+            moveSlider(currentIndex);
+        
+        })
+
+
+    </script>
+</body>
+</html>
