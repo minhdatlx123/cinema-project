@@ -3,6 +3,8 @@
     margin: 0;
 }
 html body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     overflow-x: hidden;
 
@@ -10,6 +12,7 @@ html body {
 #date-time-screen{
     background: #F34646;
     min-height: 100vh;
+    min-height: 100dvh;
     width:100%;
     background-image: url(assets/image\ 1.png);
     background-repeat: no-repeat;
@@ -28,12 +31,14 @@ html body {
     background-image: url(assets/Screen.png);
     background: #000000;
     min-height: 100vh;
+    min-height: 100dvh;
     width:65%;
 }
 .screen-container{
     display: flex;
     width: 100vw;
     min-height: 100vh;
+    min-height: 100dvh;
     background: #000;
 }
 .details{
@@ -84,9 +89,6 @@ html body {
 
 /*mobile scale*/
 @media screen and (max-width: 768px) {
-    body {
-        max-height: 100vh;
-    }
     #date-time-screen{
     width: 100%;
     }
@@ -96,6 +98,7 @@ html body {
     }
 .screen-container{
     flex-wrap:wrap;
+    min-width: 100vh;
 }
 #reservation-btn {
     display: block;  /* Hiển thị nút trên mobile */
